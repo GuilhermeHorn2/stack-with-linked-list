@@ -1,0 +1,30 @@
+
+typedef struct node{
+    int data;
+    struct node* next
+}node;
+
+typedef struct node* p_node;
+
+typedef struct pilha{
+    p_node top;
+}pilha;
+
+typedef struct pilha* p_pilha;
+
+//coloca no topo
+void add(p_pilha p,int x){
+    node *novo;
+    novo->data = x;
+    novo->next = p->top;
+    
+    //o novo agora e o topo
+    p->top = novo;
+}
+
+//tira do topo
+void del(p_pilha){
+    node* k = p->top;
+    p->top = p->top->next;
+    free(k);
+}
